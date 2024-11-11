@@ -5,10 +5,14 @@ using UnityEngine;
 public class BoxTestScript : MonoBehaviour
 {
     public Rigidbody2D redBoxRigidBody;
+    
 
     private void Update()
     {
-        
+       if (redBoxRigidBody.OverlapPoint(new Vector2(0, 0)) == true)
+        {
+            Debug.Log("You found a secret!");
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
